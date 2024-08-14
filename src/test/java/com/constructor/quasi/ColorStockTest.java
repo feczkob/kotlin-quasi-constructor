@@ -20,17 +20,6 @@ class ColorStockTest {
     }
 
     @Test
-    void secondary_ctr_works() {
-        ColorStock colorStock = new ColorStock(
-                new Pair<>(Color.RED, 1),
-                new Pair<>(Color.WHITE, 2),
-                new Pair<>(Color.GREEN, 3)
-        );
-
-        assert colorStock.getColors().size() == 3;
-    }
-
-    @Test
     void quasi_primary_ctr_works() {
         var colors = Map.ofEntries(
                 Map.entry("RED", 1),
@@ -38,17 +27,6 @@ class ColorStockTest {
                 Map.entry("GREEN", 3)
         );
         ColorStock colorStock = ColorStock.Companion.invoke(colors);
-
-        assert colorStock.getColors().size() == 3;
-    }
-
-    @Test
-    void quasi_secondary_ctr_works() {
-        ColorStock colorStock = ColorStock.Companion.invoke(
-                new Pair<>("RED", 1),
-                new Pair<>("WHITE", 2),
-                new Pair<>("GREEN", 3)
-        );
 
         assert colorStock.getColors().size() == 3;
     }
