@@ -1,10 +1,10 @@
 # Quasi constructor
 
 ## Problem statement
-When designing a (container) class in Kotlin that relies on a constructor which accepts a collection of some generic type, it's not easy 
-to create a secondary constructor that accepts the same collection of some different type.
+When designing a (container) class in Kotlin that has a constructor which accepts a collection of some generic type, it's not easy 
+to create a secondary constructor that takes the same collection of some different type.
 This phenomenon is due to type erasure, where the generic type information is removed during compilation,
-making it impossible to distinguish between two constructors that accept different generic types.
+making it impossible to distinguish between two constructors that operate on collections of different generic types.
 <details>
   <summary>Type erasure</summary>
 
@@ -21,7 +21,7 @@ So the requirements are:
 - The class should have a primary constructor that accepts a collection of some generic type `T`.
 - The class should have a secondary constructor that accepts a collection of some different generic type `K`.
 - The secondary constructor should be able to convert the collection of the different type to the collection of the primary type (`collection<K> -> collection<T>`).
-- The client should be able to use the class with the type they are most comfortable with, without having to know which method to use.
+- The client should be able to use the class with the type they like (or have at hand), without having to know which method to use.
 
 These points are unrealistic in the vast majority of real scenarios, but still, they serve the purpose of easing the burden of the clients,
 while making the class more flexible and usable. Luckily, there's a way taking advantage of Kotlin's companion objects and operator overloading to fulfill all requirements.
@@ -116,5 +116,5 @@ ColorStock colorStock = ColorStock.Companion.invoke(Map.of("RED", 10, "WHITE", 2
 ```
 
 Note that this approach works between any two interchangeable types, not just `Color` and `String`.
-For additional constructors with `varargs`, check the [feat/with-varargs]() branch.
+For additional constructors with `varargs`, check the [feat/with-varargs](https://github.com/feczkob/kotlin-quasi-constructor/tree/feat/with-varargs) branch.
 For more on the usage, see the tests.
