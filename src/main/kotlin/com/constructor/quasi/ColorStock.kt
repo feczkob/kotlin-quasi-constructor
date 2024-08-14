@@ -20,8 +20,6 @@ class ColorStock constructor(private val values: Map<Color, Int>) {
         operator fun invoke(values: Map<String, Int>) = ColorStock(values.mapKeys { valueOf(it.key) })
         @SafeVarargs
         operator fun invoke(vararg varargs: Pair<String, Int>) = ColorStock(mapOf(*varargs))
-
-        fun fromStringMap(values: Map<String, Int>) = ColorStock(values.mapKeys { valueOf(it.key) })
     }
 }
 
