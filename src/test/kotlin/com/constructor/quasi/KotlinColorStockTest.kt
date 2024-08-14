@@ -8,9 +8,9 @@ class KotlinColorStockTest {
     fun `primary ctr works`() {
         val colors = ColorStock(
             mapOf(
-                Color.RED to Amount(10),
-                Color.BLUE to Amount(20),
-                Color.YELLOW to Amount(30)
+                Color.RED to 10,
+                Color.WHITE to 20,
+                Color.GREEN to 30
             )
         )
 
@@ -20,9 +20,9 @@ class KotlinColorStockTest {
     @Test
     fun `secondary ctr works`() {
         val colors = ColorStock(
-            Color.RED to Amount(10),
-            Color.BLUE to Amount(20),
-            Color.YELLOW to Amount(30)
+            Color.RED to 10,
+            Color.WHITE to 20,
+            Color.GREEN to 30
         )
 
         assert(colors.colors.size == 3)
@@ -32,9 +32,9 @@ class KotlinColorStockTest {
     fun `quasi primary ctr works`() {
         val colors = ColorStock(
             mapOf(
-                "RED" to Amount(10),
-                "BLUE" to Amount(20),
-                "YELLOW" to Amount(30)
+                "RED" to 10,
+                "WHITE" to 20,
+                "GREEN" to 30
             )
         )
 
@@ -44,9 +44,9 @@ class KotlinColorStockTest {
     @Test
     fun `quasi secondary ctr works`() {
         val colors = ColorStock(
-            "RED" to Amount(10),
-            "BLUE" to Amount(20),
-            "YELLOW" to Amount(30)
+            "RED" to 10,
+            "WHITE" to 20,
+            "GREEN" to 30
         )
 
         assert(colors.colors.size == 3)

@@ -1,6 +1,32 @@
 package com.constructor.quasi
 
 fun main() {
-    println("Hello, World!")
+    val primaryCtr = ColorStock(
+        mapOf(
+            Color.RED to 10,
+            Color.WHITE to 20,
+            Color.GREEN to 30
+        )
+    )
+
+    val secondaryCtr = ColorStock(
+        Color.RED to 10,
+        Color.WHITE to 20,
+        Color.GREEN to 30
+    )
+
+    val quasiPrimaryCtr = ColorStock(
+        mapOf(
+            "RED" to 10,
+            "BLUE" to 20,
+            "YELLOW" to 30
+        )
+    )
+
+    val quasiSecondaryCtr = ColorStock(
+        "RED" to 10,
+        "BLUE" to 20,
+        "YELLOW" to 30
+    )
 }
 
